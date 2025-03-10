@@ -1,0 +1,32 @@
+# Environment variables and sensitive files
+.env
+*.env
+
+# Python artifacts
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+env/
+
+# Django logs and files
+*.log
+db.sqlite3  # If using SQLite as a database
+media/      # Uploaded files (optional, depends on your setup)
+
+# IDE files
+.idea/
+.vscode/
+
+# Byte-compiled or optimized files
+*.egg
+*.egg-info/
+dist/
+build/
+
+# macOS system files
+.DS_Store
+
