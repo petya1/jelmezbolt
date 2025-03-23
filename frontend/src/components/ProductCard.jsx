@@ -73,6 +73,10 @@ const ProductCard = ({ product }) => {
                     ) : (
                         <></>
                     )}
+                     <div class="flex space-x-4 mt-4">
+                <a href="" class="px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 transition">Részletek</a>
+                <a href="" class="px-4 py-2 bg-green-500 text-white font-semibold rounded-lg shadow-md hover:bg-green-600 transition">Kölcsönzés</a>
+                </div>
                 </div>
             </div>
         </div>
