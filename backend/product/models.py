@@ -10,9 +10,8 @@ class Product(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=255)
     description = models.CharField(max_length=255, blank=True, default='')
-    accessories = models.JSONField(default=list)
-    not_accessories = models.JSONField(default=list)
-    
+    accessories = models.JSONField(blank=True, default=list)
+    not_accessories = models.JSONField(blank=True, default=list)
     price = models.IntegerField(default=0)
     category = models.CharField(max_length=10, choices=CATEGORY_CHOICES)
     image = models.ImageField(upload_to='product_images/')

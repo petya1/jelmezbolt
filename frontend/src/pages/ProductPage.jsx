@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from '../services/api'; 
+import api from '../services/api';
 import ProductCard from '../components/ProductCard';
 
 const ProductPage = () => {
@@ -9,19 +9,24 @@ const ProductPage = () => {
 
     useEffect(() => {
         const fetchProducts = async () => {
-            setLoading(true); 
+            setLoading(true);
             try {
-                const response = await axios.get('/products/', {
-                    params: category !== 'all' ? { category } : {} 
+                const response = await api.get('/products/', {
+                    params: category !== 'all' ? { category } : {}
                 });
-                setProducts(response.data); 
+    
+                console.log("🔍 Válasz adat:", response.data);
+                console.log("🧪 Megjelenítendő tömb:", response.data.results || response.data);
+    
+                setProducts(response.data.results || response.data);
             } catch (error) {
-                console.error('Error fetching products:', error);
+                console.error('❌ Hiba a termékek lekérdezésénél:', error);
             } finally {
-                setLoading(false); 
+                setLoading(false);
             }
         };
-
+    
+        console.log("📦 Kiválasztott kategória:", category);
         fetchProducts();
     }, [category]); 
 
