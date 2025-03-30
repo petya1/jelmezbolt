@@ -15,18 +15,18 @@ const ProductPage = () => {
                     params: category !== 'all' ? { category } : {}
                 });
     
-                console.log("🔍 Válasz adat:", response.data);
-                console.log("🧪 Megjelenítendő tömb:", response.data.results || response.data);
+                
     
                 setProducts(response.data.results || response.data);
             } catch (error) {
-                console.error('❌ Hiba a termékek lekérdezésénél:', error);
+                console.error('Hiba a termékek betöltésekor:', error);
+                setProducts([]);
             } finally {
                 setLoading(false);
             }
         };
     
-        console.log("📦 Kiválasztott kategória:", category);
+        
         fetchProducts();
     }, [category]); 
 
