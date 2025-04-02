@@ -9,6 +9,8 @@ import Home from './pages/Home';
 import Register from './pages/Register';
 import ProductDetailPage from './pages/ProductDetailPage';
 import Cart from './pages/cart';
+import OrderSuccess from './pages/OrderSuccess';
+
 
 
 
@@ -25,6 +27,8 @@ const App = () => {
                 <Route path="/about" element={<AboutUs />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/cart" element={<Cart />} />
+                <Route path="/order-success" element={<OrderSuccess />} />
+
                  
             </Routes>
         </Router>

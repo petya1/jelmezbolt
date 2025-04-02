@@ -1,12 +1,19 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Cart = () => {
   const [cartItems, setCartItems] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
-    const storedCart = JSON.parse(localStorage.getItem('cart')) || [];;
+    const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
     setCartItems(storedCart);
   }, []);
+
+  const handleOrder = () => {
+    localStorage.removeItem('cart');
+    navigate('/order-success');
+  };
 
   const removeFromCart = (id) => {
     const updatedCart = cartItems.filter(item => item.id !== id);
@@ -31,6 +38,7 @@ const Cart = () => {
                   <div>
                     <h2 className="text-xl font-semibold">{item.name}</h2>
                     <p className="text-gray-600">{item.price} Ft</p>
+                    <p className="text-sm text-gray-500">Méret: {item.size || '–'}</p>
                   </div>
                   <button
                     onClick={() => removeFromCart(item.id)}
@@ -43,7 +51,15 @@ const Cart = () => {
             </ul>
 
             <div className="mt-6 text-right">
-              <p className="text-xl font-bold">Összesen: {total} Ft</p>
+              <p className="text-xl font-bold mb-4">Összesen: {total} Ft</p>
+
+              {}
+              <button
+                onClick={handleOrder}
+                className="px-6 py-3 bg-green-600 text-white font-semibold rounded-lg shadow hover:bg-green-700 transition"
+              >
+                Megrendelés
+              </button>
             </div>
           </>
         )}
