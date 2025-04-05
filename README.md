@@ -1,7 +1,7 @@
 Indítás:
-1. Projekt klónozása
+1. Projekt klónozása: (terminál)
 cd C:\Users\.... --> git clone https://github.com/petya1/jelmezbolt.git
-2. Backend beállítása és indítása
+2. Backend beállítása és indítása (terminál)
 Navigáljunk a backand könyvtárba: --> pip install -r requirements.txt --> python manage.py runserver (http://127.0.0.1:8000/)
-3. Frontend beállítása és indítása
+3. Frontend beállítása és indítása (terminál)
 Navigáljunk a frontend könyvtárba --> npm install --> npm run dev --> http://localhost:5173/ címenen elérhető a web
