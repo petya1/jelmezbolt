@@ -117,7 +117,7 @@ const ProductCard = ({ product }) => {
               onClick={handleRentClick}
               className="px-4 py-2 bg-green-500 text-white font-semibold rounded-lg shadow-md hover:bg-green-600 transition"
             >
-              Kölcsönzés
+              Kosárba
             </button>
           </div>
 
